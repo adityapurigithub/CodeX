@@ -1,0 +1,163 @@
+.App {
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  background-color: #282c34;
+  color: white;
+
+  /* full height width of screen so used position absolute everythn 0*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+}
+.side-menu {
+  width: 300px;
+  padding: 10px;
+  /* border: 1px solid white; */
+  background-color: #202023;
+}
+.side-menu-btn {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid rgb(220, 207, 207, 0.5);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.side-menu-btn span {
+  padding: 0 5px;
+}
+
+.side-menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.chat-box {
+  flex: 1;
+  background-color: #343541;
+  /* border: 1px solid white; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.chat-box h3 {
+  display: none;
+}
+.chat-log {
+  overflow-y: scroll;
+  height: 85%;
+  margin-left: 12px;
+  margin-bottom: 10px;
+  /* for white spaces to be in new line used preWrap property */
+  white-space: pre-wrap;
+}
+.chat-log::-webkit-scrollbar {
+  overflow: hidden;
+}
+
+.chat-input-textarea {
+  background-color: #40414f;
+  color: aliceblue;
+  width: 85%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1em;
+}
+
+.chat-message-center {
+  padding: 10px 20px;
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: justify;
+}
+.Ai {
+  background-color: #444654;
+  margin-bottom: 2em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.avatar,
+.avatar-ai {
+  color: black;
+  margin-right: 20px;
+}
+.avatar img,
+.avatar-ai img {
+  background-color: rgba(255, 0, 0, 0.4);
+  border-radius: 30%;
+  width: 40px;
+  height: 40px;
+}
+
+.message {
+  padding: 0 20px;
+}
+
+h2 {
+  margin: 0;
+  margin-top: 15px;
+
+  /* added some glowing animation */
+  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+  letter-spacing: 1px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 1.5s linear infinite;
+}
+
+.models select {
+  width: 90%;
+  margin: 10px 0;
+  font-size: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 10px;
+  outline: none;
+}
+/* for selecting option use *   */
+.models select * {
+  background-color: #282c34;
+  border-radius: 10px;
+  border: 0;
+}
+
+.models select::-webkit-scrollbar {
+  background-color: #444654;
+  width: 15px;
+}
+.models select::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 5px;
+  background-color: rgb(160, 178, 194);
+}
+
+@keyframes animate {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .side-menu {
+    display: none;
+  }
+  .chat-box h3 {
+    display: block;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    letter-spacing: 1px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 1.5s linear infinite;
+  }
+}
